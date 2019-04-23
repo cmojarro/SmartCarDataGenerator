@@ -115,15 +115,15 @@ driverBehaviorDetection.add(RoadRage);
 driverBehaviorDetection.add(MedicalCondition);
 
 List<String> variable_car_condition = new ArrayList<String>();
-list.add(Normal);
-list.add(Abnormal);
+variable_car_condition.add(Normal);
+variable_car_condition.add(Abnormal);
 
 
 int variable_driver_id = rand.nextInt(100000);
 
 List<String> speedMode = new ArrayList<String>();
-list.add(Idling);
-list.add(Driving);
+speedMode .add(Idling);
+speedMode .add(Driving);
 
 
 }
