@@ -1,0 +1,142 @@
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.Random; 
+
+public class SmartCarDataGenerator{
+
+public static void main(String[] args){
+         /*
+         Author
+         System
+         Subsystem
+         Methodology
+         Driver behavior detection
+         
+         GDi
+         Lpi
+         Variable 
+         Sensor data
+         Defenition
+         
+         GDi_Speed
+         GDi_RPM
+         GDi_Ignitor_sensor
+         GDi_MAP_sensor
+         GDi_Front_oxygen_sensor
+         GDi_Injection_Time_Sensor_1
+         GDi_Fuel_rail_pressure_sensor
+         GDi_Knock_sensor_1
+         GDi_Knock_sensor_2
+         GDi_Knock_sensor_3
+         GDi_Knock_sensor_4
+         GDi_Speed
+         
+         LPi_Speed
+         LPi_RPM
+         LPi_Ignitor_sensor
+         LPi_MAP_sensor
+         LPi_Front_oxygen_sensor
+         LPi_Injection_Time_Sensor_1
+         LPi_Fuel_rail_pressure_sensor
+         LPi_Knock_sensor_1
+         LPi_Knock_sensor_2
+         LPi_Knock_sensor_3
+         LPi_Knock_sensor_4
+         Lpi_Speed
+         
+         N
+         Mean
+         SD
+         Min
+         Max
+         
+         GDi_Variable
+         GDi_Coeffifient
+         GDi_pValue
+         GDi_Result
+         
+         LPi_Variable
+         LPi_Coeffifient
+         LPi_pValue
+         LPi_Result
+         
+         */
+         
+         Random rand = new Random(); 
+         
+         List<String> author = new ArrayList<String>();
+         author.add("Beatrice");
+         author.add("Wang");
+         author.add("Luo");
+         author.add("Han");
+         author.add("Cesar");
+         author.add("Zhang");
+         author.add("Hu");
+         author.add("Lee");
+         author.add("Chung");
+         
+         
+         List<String> system = new ArrayList<String>();
+         system.add("Engine");
+         system.add("Battery");
+         system.add("Steering");
+         system.add("Brakes");
+         system.add("Suspension");
+         system.add("Muffler");
+         system.add("FanRadiator");
+         system.add("Radiator");
+         system.add("AirConditinor");
+         system.add("SoundSystem");
+         
+         List<String> subsystem = new ArrayList<String>();
+         subsystem .add("OBD");
+         subsystem .add("CVDP");
+         subsystem .add("BGA");
+         subsystem .add("EPSG");
+         subsystem .add("LithiumBattery");
+         subsystem .add("ElectricPowerSteering");
+         subsystem .add("AntiLockBrakes");
+         subsystem .add("suspension");
+         
+         List<String> methodology = new ArrayList<String>();
+         methodology.add("DataDriven");
+         methodology.add("ModelBased");
+         
+         List<String> driverBehaviorDetection = new ArrayList<String>();
+         driverBehaviorDetection.add("Fatigue");
+         driverBehaviorDetection.add("Drowsiness");
+         driverBehaviorDetection.add("Distraction");
+         driverBehaviorDetection.add("AccelerationHabit");
+         driverBehaviorDetection.add("Texting");
+         driverBehaviorDetection.add("Mad");
+         driverBehaviorDetection.add("Happy");
+         driverBehaviorDetection.add("RoadRage");
+         driverBehaviorDetection.add("MedicalCondition");
+         
+         List<String> variable_car_condition = new ArrayList<String>();
+         variable_car_condition .add("Normal");
+         variable_car_condition .add("Abnormal");
+         
+         
+         //int variable_driver_id = rand.nextInt(100000);
+         
+         List<String> speedMode = new ArrayList<String>();
+         speedMode.add("Idling");
+         speedMode.add("Driving");
+
+         SmartCarDataGenerator obj = new SmartCarDataGenerator();
+       
+         for(int i=0; i<1000; i++){  
+         System.out.println(obj.getRandomItem(author, system, subsystem, methodology, driverBehaviorDetection, variable_car_condition, speedMode));
+         }
+      }
+  
+  public String getRandomItem(List<String> author, List<String> system, List<String> subsystem, List<String> methodology, List<String> driverBehaviorDetection, List<String> variable_car_condition, List<String> speedMode){
+      Random rand = new Random();
+      return author.get(rand.nextInt(author.size()))+ ", " + system.get(rand.nextInt(system.size()))+ ", " + subsystem.get(rand.nextInt(subsystem.size()))+ ", " + methodology.get(rand.nextInt(methodology.size()))+ ", " + driverBehaviorDetection.get(rand.nextInt(driverBehaviorDetection.size()))+ ", " + variable_car_condition.get(rand.nextInt(variable_car_condition.size()))+ ", " + speedMode.get(rand.nextInt(speedMode.size())) ;
+      
+  }
+
+}
